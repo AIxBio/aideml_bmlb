@@ -234,6 +234,7 @@ class Agent:
                 "Propose an evaluation metric that is reasonable for this task.",
                 "Don't suggest to do EDA.",
                 "The data is already prepared and available in the directory mentioned in the instructions. There is no need to unzip any files."
+            ]
         }
         prompt["Instructions"] |= self._prompt_impl_guideline
         prompt["Instructions"] |= self._prompt_environment
