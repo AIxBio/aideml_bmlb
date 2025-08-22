@@ -154,9 +154,9 @@ class Agent:
             "No parts of the code should be skipped, don't terminate the before finishing the script.",
             "Your response should only contain a single code block.",
             f"Be aware of the running time of the code, it should complete within {humanize.naturaldelta(exec_timeout)}.",
-            'All the provided input data is stored in "./input" directory.',
-            '**You MUST submit predictions on the provided unlabeled test data in a `submission.csv` file** file in the "./working" directory as described in the task description** This is extremely important since this file is used for grading/evaluation. DO NOT FORGET THE submission.csv file!',
-            'You can also use the "./working" directory to store any temporary files that your code needs to create.',
+            'All the provided input data is stored in directory mentioned in the instructions.',
+            '**If there is test data provided for this task, please save the test predictions in a `submission.csv` file in the specified directory as described in the task description** This is extremely important since this file is used for grading/evaluation. DO NOT FORGET THE submission.csv file!',
+            'You can also use the directory mentioned in the instructions to store any temporary files that your code needs to create.',
             "REMEMBER THE ./submission/submission.csv FILE!!!!! The correct directory is important too.",
         ]
         if self.acfg.expose_prediction:
@@ -233,8 +233,7 @@ class Agent:
                 "The solution sketch should be 3-5 sentences.",
                 "Propose an evaluation metric that is reasonable for this task.",
                 "Don't suggest to do EDA.",
-                "The data is already prepared and available in the `./input` directory. There is no need to unzip any files.",
-            ],
+                "The data is already prepared and available in the directory mentioned in the instructions. There is no need to unzip any files."
         }
         prompt["Instructions"] |= self._prompt_impl_guideline
         prompt["Instructions"] |= self._prompt_environment
